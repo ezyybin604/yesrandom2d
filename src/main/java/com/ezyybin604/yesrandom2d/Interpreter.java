@@ -1,12 +1,12 @@
-package src.main.java.com.ezyybin604.yesrandom2d;
+package com.ezyybin604.yesrandom2d;
 
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
-import java.util.List;
 import java.util.Scanner;
-import java.awt.Point;
 
 enum NoneBool {
     TRUE,
@@ -116,18 +116,21 @@ public class Interpreter {
                     setCell(toreg, getCell(fromreg));
                     break;
                 case '\n':
-                    if (lastConditionalResult == NoneBool.TRUE) {
-                        char c = reader.findInLine(".").charAt(0);
-                        setCell('Q', c);
-                    } else if (lastConditionalResult == NoneBool.FALSE) {
-                        char c = (char)getCell('r');
-                        System.out.print(c);
-                    } else {
-                        cursor = new Point(rand.nextInt(file.size.x), rand.nextInt(file.size.y));
+                    switch (lastConditionalResult) {
+                        case TRUE -> {
+                            char c = reader.findInLine(".").charAt(0);
+                            setCell('Q', c);
+                        }
+                        case FALSE -> {
+                            char c = (char)getCell('r');
+                            System.out.print(c);
+                        }
+                        case NULL -> cursor = new Point(rand.nextInt(file.size.x), rand.nextInt(file.size.y));
                     }
                     break;
+
                 case ' ':
-                    cursor = lastRead.get((Object)getCell('j'));
+                    cursor = lastRead.get((char)getCell('j'));
                     break;
                 case '^': case 'm': case '!': case 'M': case 'v':
                     System.out.print("Not Implimented");

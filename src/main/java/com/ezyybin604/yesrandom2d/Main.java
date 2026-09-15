@@ -1,4 +1,4 @@
-package src.main.java.com.ezyybin604.yesrandom2d;
+package com.ezyybin604.yesrandom2d;
 
 public class Main {
     public static boolean inRange(int min, int n, int max) {
@@ -20,6 +20,5 @@ public class Main {
             intp.exexcute();
         }
         Debugger.log("Stopped program");
-        return;
     }
 }

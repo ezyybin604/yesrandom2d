@@ -4,9 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example.yesrandom2d</groupId>
-    <artifactId>yesrandom2d</artifactId>
-    <version>0.1</version>
+    <groupId>com.ezyybin604.yesrandom2d</groupId>
+    <artifactId>YesRandom2D</artifactId>
+    <version>0.2-dev</version>
+
+    <name>YesRandom2D</name>
+    <url>https://github.com/ezyybin604/yesrandom2d</url>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -17,12 +20,13 @@
         <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
+            <version>3.5.1</version>
             <artifactId>maven-jar-plugin</artifactId>
             <configuration>
             <archive>
                 <manifest>
                 <addClasspath>true</addClasspath>
-                <mainClass>src.main.java.com.ezyybin604.yesrandom2d.Main</mainClass>
+                <mainClass>com.ezyybin604.yesrandom2d.Main</mainClass>
                 </manifest>
             </archive>
             </configuration>

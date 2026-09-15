@@ -1,6 +1,11 @@
-package src.main.java.com.ezyybin604.yesrandom2d;
+package com.ezyybin604.yesrandom2d;
+
 import java.awt.Point;
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,7 +18,7 @@ public class FileLine {
         try {
             core = new InputStreamReader(new FileInputStream(file));
         } catch (FileNotFoundException e) {
-            e.printStackTrace();
+            return;
         }
         if (!fileTester.canRead() || !fileTester.isFile() || !fileTester.exists()) {
             throw new Error("Cannot read file.");
@@ -35,7 +40,6 @@ public class FileLine {
             size.y = data.size();
         }
         catch (IOException e) {
-            e.printStackTrace();
         }
     }
     public char readChar(int ln, int ch) {
@@ -53,7 +57,6 @@ public class FileLine {
         try {
             core.close();
         } catch (IOException e) {
-            e.printStackTrace();
-        }
+        } // big sad
     }
 }
