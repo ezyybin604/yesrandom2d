@@ -1,4 +1,4 @@
-package com.ezyybin604.yesrandom2d;
+package src.main.java.com.ezyybin604.yesrandom2d;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -56,28 +56,30 @@ public class Interpreter {
         }
         // Move cursor
         int newdir = getCell(68);
-        Point dirt = diroffsets[Main.inRange(0, newdir, 7) ? newdir : 0];
-        cursor.translate(dirt.x, dirt.y);
-        // up+left=0, up+right=2, down+right=4, down+left=6
-        boolean changed = false;
-        if (cursor.x <= -1) { // left wall
-            newdir = 6;
-            cursor.translate(1, 0);
-            changed = true;
+        if (Main.inRange(0, newdir, 7)) {
+            Point dirt = diroffsets[newdir];
+            cursor.translate(dirt.x, dirt.y);
+            // up+left=0, up+right=2, down+right=4, down+left=6
+            boolean changed = false;
+            if (cursor.x <= -1) { // left wall
+                newdir = 6;
+                cursor.translate(1, 0);
+                changed = true;
+            }
+            if (cursor.y <= -1) { // up wall
+                newdir = 0;
+                cursor.translate(0, 1);
+            }
+            if (cursor.x >= file.size.x) { // right wall
+                newdir = 2;
+                cursor.translate(-1, 0);
+            }
+            if (cursor.y >= file.size.y) { // down wall
+                if (!changed) newdir = 4;
+                cursor.translate(0, -1);
+            }
+            setCell('D', newdir);
         }
-        if (cursor.y <= -1) { // up wall
-            newdir = 0;
-            cursor.translate(0, 1);
-        }
-        if (cursor.x >= file.size.x) { // right wall
-            newdir = 2;
-            cursor.translate(-1, 0);
-        }
-        if (cursor.y >= file.size.y) { // down wall
-            if (!changed) newdir = 4;
-            cursor.translate(0, -1);
-        }
-        setCell('D', newdir);
     }
 
     public void setCell(int i, int val) {

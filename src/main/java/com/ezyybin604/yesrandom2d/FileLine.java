@@ -1,4 +1,4 @@
-package com.ezyybin604.yesrandom2d;
+package src.main.java.com.ezyybin604.yesrandom2d;
 import java.awt.Point;
 import java.io.*;
 import java.util.ArrayList;
