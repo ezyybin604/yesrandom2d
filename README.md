@@ -22,7 +22,7 @@ b
 | Open File (“^”) | Reads string terminating at \0 starting in register specified in * and opens the file to read/append mode | * |
 | Clear (“m”) | Sets file to be cleared | If there is no file, then do nothing
 | Write (“!”) | Appends the character specified in N to the currently opened file. | If there is no file, then do nothing | N |
-| Read (“M”) | Read a character from the currently opened file. If file has ended return a 0 but if not and the file reads a 0, return a 1 data is stored into * | * |
+| Read (“M”) | Read a character from the currently opened file. If file has ended return a -1. data is stored into * | * |
 | Close (“v”) | Close currently opened file. Saves changes. |
 
 
@@ -34,5 +34,6 @@ b
 - ~~FileLine (2D program reader)~~
 - ~~Main (Glue! / Util)~~
 - ~~Debug (breakpoints?, logger)~~
-- FileIO (file io functionality)
-- Interpreter (interpreter, finish file io)
+- Find instant-input char method (import from C?)
+- ~~FileIO (file io functionality)~~
+- ~~Interpreter (interpreter, finish file io)~~

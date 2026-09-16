@@ -6,8 +6,7 @@
 
     <groupId>com.ezyybin604.yesrandom2d</groupId>
     <artifactId>YesRandom2D</artifactId>
-    <version>0.2-dev</version>
-
+    <version>0.3-release</version>
     <name>YesRandom2D</name>
     <url>https://github.com/ezyybin604/yesrandom2d</url>
 
@@ -15,8 +14,11 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
-    
+
     <build>
+        <sourceDirectory>${project.basedir}</sourceDirectory>
+        <testSourceDirectory>${project.basedir}/test</testSourceDirectory>
+
         <plugins>
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
