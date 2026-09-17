@@ -1,0 +1,47 @@
+B:R0C;WORnCqB2R0C;RdCqB4R0C;RaCqB6R0C;RwCqB1R0C;R1Cq__RNWaCqQ@C$WoRtCq__GpHrIgJm*GC^WsRCCqA~C@WORcCqRDWsCq
+                                                                                                         W
+wasd=dir,n=10,_=dummy reg,d=0,K=1,L=-1, m=12 b=13, v=11, x=14, q=28, e=30                                a
+t=tape loc,256, c=stack start,128 q=tape pos, u=current cell content i=cellreg                           _
++-.,<>[]       program execution goes here                                                               _
+                                                                                                         C
+DqCsWDR__qCxROW@CqCbWARqCbROW@CqCmWAR__qCvROW@CqCKWSR__qCmROW@CqCsWSRqCnWAR__qCKR;C1B0R__qCLROW;C1R0B__`jq
+0W
+Dd       + command
+0C                                     
+Dq`_CMW*RBCqRRWvCqC;R4WOCqTDREWdCqRDWsCq
+                                       C  copy cur cell to u          reg i set val O
+                                       =WqRACqWtRSCqC@WORiCqRWCqRuCq__WuRACqWKRSCqC@WiRRCqWOCqC __
+                                       W
+                                       a
+                                       C
+ qCsW__________________________________q
+ W
+ d      - command
+ C
+ q____W*RBCqRRWbCqC;R4WOCqTDREWdCqRDWsCq
+                                       C
+                                       =WqRACqWtRSCqC@WORiCqRWCqRuCq__WuRACqWLRSCqC@WiRRCqWOCqC __
+                                       W
+                                       a
+                                       C
+ qCsW__________________________________q
+ W
+ d      . command (requires constant 14)
+ C
+ q____W*RBCqRRWxCqC;R4WOCqTDREWdCqRDWsCq
+                                       C
+                                       = Impliment later
+                                       W
+                                       a
+                                       C
+ qCsW__________________________________q
+ W
+ d      , command
+ C
+ q____W*RBCqRRWmCqC;R4WOCqTDREWdCqRDWsCq
+                                       C
+                                       = Impliment later
+                                       W
+                                       a
+                                       C
+ qCsW__________________________________q

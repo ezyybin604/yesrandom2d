@@ -133,13 +133,17 @@ public class Interpreter {
                 if (!changed) newdir = 4;
                 cursor.translate(0, -1);
             }
-            setCell('D', newdir);
+            if (getCell(68) != newdir) setCellOnly('D', newdir);
         }
     }
 
-    public void setCell(int i, int val) {
+    void setCellOnly(int i, int val) {
         while (i >= cells.size()) cells.add(0);
         cells.set(i, val);
+    }
+
+    void setCell(int i, int val) {
+        setCellOnly(i, val);
         if ((char)i == 'C') {
             executeCmd((char)val);
         } else {
@@ -151,7 +155,7 @@ public class Interpreter {
         boolean cond;
         switch (cmd) {
             case '@':
-                setCell('O', getCell('A') + getCell('C'));
+                setCell('O', getCell('A') + getCell('S'));
                 break;
             case ';':
                 setCell('O', getCell('B') - getCell('R'));
@@ -197,7 +201,12 @@ public class Interpreter {
                 break;
 
             case ' ':
-                cursor = lastRead.get((char)getCell('j'));
+                char c = (char)getCell('j');
+                if (lastRead.containsKey(c)) {
+                    cursor = lastRead.get(c);
+                } else {
+                    cursor = new Point(); // undocumented behavior
+                }
                 break;
             case '^':
                 String name = getString(getCell('*'));

@@ -11,7 +11,7 @@ b
 
 | Command written to C register | What it does ( [any] = read variable ) | Registers modified/read |
 | ----------------------------- | -------------------------------------- | ----------------------- |
-| Add (“@”) | O = A + C | A, C, O |
+| Add (“@”) | O = A + S | A, S, O |
 | Subtract (“;”) | O = [B] - [R] | B, R, O |
 | Multiply (“$”) | o = [N] * [Q] | N, Q, o |
 | Conditional Copy (“=”) | If [4]==33: [T]=[E] | 4, E, T
@@ -35,5 +35,6 @@ b
 - ~~Main (Glue! / Util)~~
 - ~~Debug (breakpoints?, logger)~~
 - Find instant-input char method (import from C?)
+- Reset pointer instead of closing file when open file comes after (optimization)
 - ~~FileIO (file io functionality)~~
 - ~~Interpreter (interpreter, finish file io)~~
